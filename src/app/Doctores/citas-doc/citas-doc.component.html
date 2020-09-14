@@ -1,0 +1,65 @@
+<div>
+
+
+    <app-nav-doc></app-nav-doc>
+
+    <div>
+
+        <h1>SISTEMA DE AGENDACIÓN DE CITAS MEDICAS</h1>
+        <h2>CITAS</h2>
+
+
+        <br>
+        <br>
+
+        <div class="container mt-lg-5">
+
+            <div class="row">
+                <div class="col-6">
+                    <img class="img-thumbnail" src="../../../assets/img/img_historial.png" alt="">
+                </div>
+                <div class="col-6">
+
+                    <div class="scroll">
+                        <div class="card" style="width: 50rem;">
+                            <div class="card-body" *ngFor="let cita of citas">
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.fechaCita" disabled>
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.hora" disabled>
+
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.nombrePaciente" disabled>
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.especialidad" disabled>
+
+
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="userName" disabled>
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.consultorio" disabled>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group text-center">
+                                    <button class="btn btn-info btn-block col-12 " [routerLink]="['/registrarCita', cita.id]" routerLinkActive="'active'">SELECCIONAR</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

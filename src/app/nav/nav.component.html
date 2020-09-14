@@ -1,0 +1,20 @@
+<div class="container">
+
+    <div class="outer">
+        <div class="logo"> </div>
+        <div class="title">{{userName}}</div>
+
+    </div>
+
+    <ol>
+        <li><a routerLink="/home" routerLinkActive="'active'">Home</a></li>
+        <li><a routerLink="/agendarCita" routerLinkActive="'active'">Agendar citas</a></li>
+        <li><a routerLink="/historial" routerLinkActive="'active'">Historial</a></li>
+        <li><a routerLink="/especialistas" routerLinkActive="'active'">Especialistas</a></li>
+        <li><a routerLink="/servicios" routerLinkActive="'active'">Servicios</a></li>
+        <li><a routerLink="/perfil" routerLinkActive="'active'">Perfil</a></li>
+        <li><a routerLink="/login" routerLinkActive="'active'" (click)="logOut()">Cerrar Sesión</a></li>
+    </ol>
+
+
+</div>

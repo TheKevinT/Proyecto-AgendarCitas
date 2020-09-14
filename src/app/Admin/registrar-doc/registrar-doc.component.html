@@ -1,0 +1,42 @@
+<div class="main">
+
+
+    <h1> REGISTRAR DOCTOR</h1>
+
+    <div class="container">
+        <form #formRegisterDoc="ngForm" (ngSubmit)="onRegisterDoc()">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre Completo" name="nombreDoctor" [(ngModel)]="nombreDoctor" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault02" placeholder="Especialidad" name="direccionDoc" [(ngModel)]="direccionDoc" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault03" placeholder="Correo" name="correoDoc" [(ngModel)]="correoDoc" required>
+                    <input type="number" class="form-control mt-4" id="validationDefault04" placeholder="Celular" name="celuDoc" [(ngModel)]="celuDoc" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault05" placeholder="Usuario" name="userNameDoc" [(ngModel)]="userNameDoc" required>
+                    <input type="password" id="inputPassword5" class="form-control  mt-4 " placeholder="Contraseña" name="passDoc" [(ngModel)]="passDoc" required>
+
+                </div>
+                <div class="col-md-6 mb-3">
+
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="CI" name="ciDoc" [(ngModel)]="ciDoc" required>
+                    <input type="number" class="form-control mt-4" id="validationDefault07" placeholder="Numero de oficina" name="ofinicaDoc" [(ngModel)]="oficinaDoc" required>
+                    <input type="date" class="form-control mt-4" id="validationDefault08" name="fechaDoc" [(ngModel)]="fechaDoc" required>
+
+
+                    <br>
+                    <label for="genero" class="text-white">Género</label>
+                    <div *ngFor="let genero of generos" class="mt-4">
+
+                        <input type="radio" value="{{genero}}" name="genDoc" [(ngModel)]="genDoc" (change)="radioGenero($event)">
+                        <i class="text-white">{{genero}}</i>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-block mt-5">REGISTRAR</button>
+        </form>
+    </div>
+
+</div>

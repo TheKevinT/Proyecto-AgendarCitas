@@ -1,0 +1,44 @@
+<div>
+
+
+    <app-nav></app-nav>
+
+    <div>
+
+        <h1>SISTEMA DE AGENDACIÓN DE CITAS MEDICAS</h1>
+        <h2>CONOZCA A NUESTROS ESPECIALISTAS</h2>
+
+
+        <br>
+        <br>
+
+        <div class="container mt-lg-5">
+
+            <div class="row">
+                <div class="col-6">
+                    <img class="img-thumbnail" src="../../assets/img/img_especialistas.png" alt="">
+                </div>
+                <div class="col-6">
+
+                    <div class="scroll">
+                        <div class="card" *ngFor="let doc of doctores">
+                            <h5 class="card-header">{{doc.nombreDoctor}}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">{{doc.especialidadDoc}}</h5>
+                                <p class="card-text"><strong>Correo:</strong> {{doc.correoDoc}}</p>
+                                <p class="card-text"><strong>Consultorio:</strong> {{doc.oficinaDoc}}</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

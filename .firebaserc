@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "agendarcitas-78aa2": {
+      "hosting": {
+        "AgendarCitas": [
+          "agendarcitas-78aa2"
+        ]
+      }
+    }
+  }
+}

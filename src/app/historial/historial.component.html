@@ -1,0 +1,65 @@
+<div>
+
+
+    <app-nav></app-nav>
+
+    <div>
+
+        <h1>SISTEMA DE AGENDACIÓN DE CITAS MEDICAS</h1>
+        <h2>HISTORIAL</h2>
+
+
+        <br>
+        <br>
+
+        <div class="container mt-lg-5">
+
+            <div class="row">
+                <div class="col-6">
+                    <img class="img-thumbnail" src="../../assets/img/img_historial.png" alt="">
+                </div>
+                <div class="col-6">
+
+                    <div class="scroll">
+                        <div class="card" style="width: 50rem;">
+                            <div class="card-body">
+                                <div class="form-row" *ngFor="let cita of citas">
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.fechaCita" disabled>
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.hora" disabled>
+
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.nombreDoc" disabled>
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.especialidad" disabled>
+
+
+                                    </div>
+
+                                    <div class="col-md-4 mb-3">
+                                        <input type="text" class="form-control mt-2" [ngModel]="cita.consultorio" disabled>
+                                        <input type="text" class="form-control mt-2" value="Finalizado" disabled>
+
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

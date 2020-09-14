@@ -1,0 +1,28 @@
+<div>
+    <app-nav-admin></app-nav-admin>
+
+
+    <div class="container">
+        <h1>BIENVENIDO</h1>
+        <h2>
+            AL SISTEMA DE AGENDACIÓN DE CITAS MEDICAS
+        </h2>
+
+        <button type="button" class="btn btn-info btn-block col-20 mt-5 mb-5" routerLink="/registrarDoc" routerLinkActive="'active'">Agregar</button>
+
+        <ul class="todo-list">
+            <div class=items *ngFor="let doc of doctores">
+                <li class="lista">{{doc.nombreDoctor}} </li>
+                <button class="complete-btn" [routerLink]="['/editarDoc', doc.idDoc]">
+                    <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button class="trash-btn" (click)="onDeleteDoc(doc.idDoc)">
+                    <i class="fas fa-trash"></i>
+                </button>
+
+            </div>
+        </ul>
+
+    </div>
+
+</div>

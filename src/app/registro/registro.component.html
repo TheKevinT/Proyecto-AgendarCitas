@@ -1,0 +1,56 @@
+<div class="main">
+
+
+    <h1> REGISTRO</h1>
+
+    <div class="container">
+        <form #formRegister="ngForm" (ngSubmit)="onAddUser()">
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+
+                    <input type="text" class="form-control" id="validationDefault01" placeholder="Nombre Completo" name="nombreComl" [(ngModel)]="nombreComl" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault02" placeholder="Direccion" name="direccion" [(ngModel)]="direccion" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault03" placeholder="Correo" name="email" [(ngModel)]="email" required>
+                    <input type="number" class="form-control mt-4" id="validationDefault04" placeholder="Celular" name="telf" [(ngModel)]="telf" required>
+                    <input type="text" class="form-control mt-4" id="validationDefault05" placeholder="Usuario" name="userName" [(ngModel)]="userName" required>
+                    <input type="password" id="inputPassword5" class="form-control  mt-4 " placeholder="Contraseña" name="password" [(ngModel)]="password" required>
+
+                </div>
+                <div class="col-md-6 mb-3">
+
+                    <input type="text" class="form-control" id="validationDefault06" placeholder="CI" name="ci" [(ngModel)]="ci" required>
+                    <input type="date" class="form-control mt-4" id="validationDefault07" name="fechaCumple" [(ngModel)]="fechaCumple" required>
+                    <!--
+                        <div class="mt-4">
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label text-white" for="customRadio1">Hombre</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                <label class="custom-control-label text-white" for="customRadio2">Mujer</label>
+                            </div>
+
+                        </div>
+                    -->
+
+                    <br>
+                    <label for="genero" class="text-white">Género</label>
+                    <div *ngFor="let genero of generos" class="mt-4">
+
+                        <input type="radio" value="{{genero}}" name="gen" [(ngModel)]="gen" (change)="radioGenero($event)">
+                        <i class="text-white">{{genero}}</i>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-info btn-block mt-5" *ngIf="!isError">REGISTRAR</button>
+        </form>
+        <div class="alert alert-danger" role="alert" *ngIf="isError">{{msgError}}</div>
+    </div>
+
+</div>
