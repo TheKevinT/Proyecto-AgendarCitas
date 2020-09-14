@@ -96,9 +96,9 @@ export class DataApiService {
       }
 
   //actualizar un doctor
-  UpdateDoc(doct: Doctor): void{
+  UpdateDoc(doct: Doctor, idUser: string): void{
     let idDoc = doct.idDoc;
-    this.docDocument = this.afs.doc<Doctor>(`doctores/${idDoc}`);
+    this.docDocument = this.afs.doc<Doctor>(`doctores/${idUser}`);
     this.docDocument.update(doct);
 
   }

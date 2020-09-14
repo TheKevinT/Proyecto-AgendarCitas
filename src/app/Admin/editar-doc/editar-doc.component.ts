@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgZone } from '@angular/core';
 import { Doctor } from '../../Modelo/doctor';
 import { DataApiService } from '../../Services/data-api.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -18,7 +18,7 @@ export class EditarDocComponent implements OnInit {
     'Mujer',
   ];
 
-  constructor(private router:Router ,private route: ActivatedRoute ,private dataApi: DataApiService) { }
+  constructor(private router:Router ,private route: ActivatedRoute ,private dataApi: DataApiService, private ngZone: NgZone) { }
 
   ngOnInit(): void {
 
@@ -39,8 +39,9 @@ export class EditarDocComponent implements OnInit {
 
   onPreupdate(doctor: NgForm){
 
-        this.dataApi.UpdateDoc(doctor.value)
-     
+    this.dataApi.UpdateDoc(doctor.value, this.doctores.idDoc);
+    alert('Doctor Actulizado !!');
+    this.ngZone.run(() => this.router.navigate(['AdminHome']));
   
   }
    
